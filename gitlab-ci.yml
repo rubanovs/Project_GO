@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+
+variables:
+  POSTGRES_DB: mydb
+  POSTGRES_USER: myuser
+  POSTGRES_PASSWORD: mypassword
+
+services:
+  - postgres:latest
+
+before_script:
+  - psql -h postgres -U $POSTGRES_USER -d $POSTGRES_DB -c "CREATE TABLE IF NOT EXISTS commands (id SERIAL PRIMARY KEY, content TEXT, output TEXT);"
+
+build:
+  stage: build
+  script:
+    - go build
+
+test:
+  stage: test
+  script:
+    - go test
