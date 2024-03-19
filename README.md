@@ -58,7 +58,3 @@ We will implement the API using the following architecture and design decisions:
 - **Data Consistency**: The output of long-running commands will be saved to the database, ensuring data consistency.
 - **Testability**: The API endpoints and command execution logic will be thoroughly tested.
 - **Complexity**: The additional functionality for stopping commands and handling long-running commands increases complexity.
-
----
-
-This ADR outlines the architectural decisions for our Command Execution and Storage API. It provides a clear direction for implementation and testing. If any further decisions or changes arise during development, we will document them in additional ADRs. 🚀
